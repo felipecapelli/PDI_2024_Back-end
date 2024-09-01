@@ -1,0 +1,6 @@
+@SalesSystemPDI2024.API_HostAddress = http://localhost:5249
+
+GET {{SalesSystemPDI2024.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

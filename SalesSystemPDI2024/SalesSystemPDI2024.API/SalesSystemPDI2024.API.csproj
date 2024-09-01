@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SalesSystemPDI2024.Data\SalesSystemPDI2024.Data.csproj" />
+    <ProjectReference Include="..\SalesSystemPDI2024.Model\SalesSystemPDI2024.Model.csproj" />
+  </ItemGroup>
+
+</Project>

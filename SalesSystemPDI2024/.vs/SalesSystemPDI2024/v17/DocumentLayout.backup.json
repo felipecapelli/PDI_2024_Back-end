@@ -1,12 +1,104 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\felip\\Desktop\\ALURA\\_NOVOS_CURSOS\\PDI-2024\\back-end\\PDI_2024_Back-end\\SalesSystemPDI2024\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1627B877-1E47-4EC6-A35C-A92C521C7D39}|SalesSystemPDI2024.Data\\SalesSystemPDI2024.Data.csproj|c:\\users\\felip\\desktop\\alura\\_novos_cursos\\pdi-2024\\back-end\\pdi_2024_back-end\\salessystempdi2024\\salessystempdi2024.data\\dal\\addressdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1627B877-1E47-4EC6-A35C-A92C521C7D39}|SalesSystemPDI2024.Data\\SalesSystemPDI2024.Data.csproj|solutionrelative:salessystempdi2024.data\\dal\\addressdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D354C91-EFC3-4D9C-986E-AA238326D5C2}|SalesSystemPDI2024.API\\SalesSystemPDI2024.API.csproj|c:\\users\\felip\\desktop\\alura\\_novos_cursos\\pdi-2024\\back-end\\pdi_2024_back-end\\salessystempdi2024\\salessystempdi2024.api\\controllers\\addresscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D354C91-EFC3-4D9C-986E-AA238326D5C2}|SalesSystemPDI2024.API\\SalesSystemPDI2024.API.csproj|solutionrelative:salessystempdi2024.api\\controllers\\addresscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1627B877-1E47-4EC6-A35C-A92C521C7D39}|SalesSystemPDI2024.Data\\SalesSystemPDI2024.Data.csproj|c:\\users\\felip\\desktop\\alura\\_novos_cursos\\pdi-2024\\back-end\\pdi_2024_back-end\\salessystempdi2024\\salessystempdi2024.data\\connection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1627B877-1E47-4EC6-A35C-A92C521C7D39}|SalesSystemPDI2024.Data\\SalesSystemPDI2024.Data.csproj|solutionrelative:salessystempdi2024.data\\connection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F77C01B-4A08-4CDF-B5BF-09AED51577AE}|SalesSystemPDI2024.Model\\SalesSystemPDI2024.Model.csproj|c:\\users\\felip\\desktop\\alura\\_novos_cursos\\pdi-2024\\back-end\\pdi_2024_back-end\\salessystempdi2024\\salessystempdi2024.model\\address.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F77C01B-4A08-4CDF-B5BF-09AED51577AE}|SalesSystemPDI2024.Model\\SalesSystemPDI2024.Model.csproj|solutionrelative:salessystempdi2024.model\\address.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D354C91-EFC3-4D9C-986E-AA238326D5C2}|SalesSystemPDI2024.API\\SalesSystemPDI2024.API.csproj|c:\\users\\felip\\desktop\\alura\\_novos_cursos\\pdi-2024\\back-end\\pdi_2024_back-end\\salessystempdi2024\\salessystempdi2024.api\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D354C91-EFC3-4D9C-986E-AA238326D5C2}|SalesSystemPDI2024.API\\SalesSystemPDI2024.API.csproj|solutionrelative:salessystempdi2024.api\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Address.cs",
+              "DocumentMoniker": "C:\\Users\\felip\\Desktop\\ALURA\\_NOVOS_CURSOS\\PDI-2024\\back-end\\PDI_2024_Back-end\\SalesSystemPDI2024\\SalesSystemPDI2024.Model\\Address.cs",
+              "RelativeDocumentMoniker": "SalesSystemPDI2024.Model\\Address.cs",
+              "ToolTip": "C:\\Users\\felip\\Desktop\\ALURA\\_NOVOS_CURSOS\\PDI-2024\\back-end\\PDI_2024_Back-end\\SalesSystemPDI2024\\SalesSystemPDI2024.Model\\Address.cs",
+              "RelativeToolTip": "SalesSystemPDI2024.Model\\Address.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T14:46:37.734Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Connection.cs",
+              "DocumentMoniker": "C:\\Users\\felip\\Desktop\\ALURA\\_NOVOS_CURSOS\\PDI-2024\\back-end\\PDI_2024_Back-end\\SalesSystemPDI2024\\SalesSystemPDI2024.Data\\Connection.cs",
+              "RelativeDocumentMoniker": "SalesSystemPDI2024.Data\\Connection.cs",
+              "ToolTip": "C:\\Users\\felip\\Desktop\\ALURA\\_NOVOS_CURSOS\\PDI-2024\\back-end\\PDI_2024_Back-end\\SalesSystemPDI2024\\SalesSystemPDI2024.Data\\Connection.cs",
+              "RelativeToolTip": "SalesSystemPDI2024.Data\\Connection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAByAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-02T21:17:30.803Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AddressController.cs",
+              "DocumentMoniker": "C:\\Users\\felip\\Desktop\\ALURA\\_NOVOS_CURSOS\\PDI-2024\\back-end\\PDI_2024_Back-end\\SalesSystemPDI2024\\SalesSystemPDI2024.API\\Controllers\\AddressController.cs",
+              "RelativeDocumentMoniker": "SalesSystemPDI2024.API\\Controllers\\AddressController.cs",
+              "ToolTip": "C:\\Users\\felip\\Desktop\\ALURA\\_NOVOS_CURSOS\\PDI-2024\\back-end\\PDI_2024_Back-end\\SalesSystemPDI2024\\SalesSystemPDI2024.API\\Controllers\\AddressController.cs",
+              "RelativeToolTip": "SalesSystemPDI2024.API\\Controllers\\AddressController.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAAAEYAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-02T21:07:26.044Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AddressDAL.cs",
+              "DocumentMoniker": "C:\\Users\\felip\\Desktop\\ALURA\\_NOVOS_CURSOS\\PDI-2024\\back-end\\PDI_2024_Back-end\\SalesSystemPDI2024\\SalesSystemPDI2024.Data\\DAL\\AddressDAL.cs",
+              "RelativeDocumentMoniker": "SalesSystemPDI2024.Data\\DAL\\AddressDAL.cs",
+              "ToolTip": "C:\\Users\\felip\\Desktop\\ALURA\\_NOVOS_CURSOS\\PDI-2024\\back-end\\PDI_2024_Back-end\\SalesSystemPDI2024\\SalesSystemPDI2024.Data\\DAL\\AddressDAL.cs",
+              "RelativeToolTip": "SalesSystemPDI2024.Data\\DAL\\AddressDAL.cs",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAAAHEAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-02T20:51:43.082Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "C:\\Users\\felip\\Desktop\\ALURA\\_NOVOS_CURSOS\\PDI-2024\\back-end\\PDI_2024_Back-end\\SalesSystemPDI2024\\SalesSystemPDI2024.API\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "SalesSystemPDI2024.API\\Controllers\\WeatherForecastController.cs",
+              "ToolTip": "C:\\Users\\felip\\Desktop\\ALURA\\_NOVOS_CURSOS\\PDI-2024\\back-end\\PDI_2024_Back-end\\SalesSystemPDI2024\\SalesSystemPDI2024.API\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "SalesSystemPDI2024.API\\Controllers\\WeatherForecastController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-02T17:48:26.511Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

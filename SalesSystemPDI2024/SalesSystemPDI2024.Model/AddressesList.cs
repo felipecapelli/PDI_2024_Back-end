@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+
+namespace SalesSystemPDI2024.Model
+{
+    public class AddressesList
+    {
+        public long AddressesListID { get; set; }
+        public long CustomersSuppliersID { get; set; }
+        public long AddressID { get; set; }
+    }
+}

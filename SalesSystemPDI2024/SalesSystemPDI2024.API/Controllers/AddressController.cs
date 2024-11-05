@@ -17,57 +17,53 @@ namespace SalesSystemPDI2024.API.Controllers
             _logger = logger;
         }
 
-        //[HttpGet(Name = "GetAddress")]
-        //public IEnumerable<Address> Get()
-        //{
-        //    AddressDAL addressDAL = new AddressDAL();
-        //    return addressDAL.Listar();
-        //}
-
         [HttpGet]
         public IActionResult GetAdresses()
         {
             AddressDAL addressDAL = new AddressDAL();
-            return Ok(addressDAL.Listar());
+            return Ok(addressDAL.List());
         }
 
-        [HttpGet("{enderecoParaBuscar}")]
-        public IActionResult GetAdressesByAddressNickName(string enderecoParaBuscar)
+        [HttpGet("{addressIDToLookFor}")]
+        public IActionResult GetAdressesByAddressNickName(long addressIDToLookFor)
         {
             AddressDAL addressDAL = new AddressDAL();
-            return Ok(addressDAL.Buscar(enderecoParaBuscar));
+            Address addressFromDB = addressDAL.RetrieveByID(addressIDToLookFor);
+            
+            if (addressFromDB == null) return NotFound();
+
+            return Ok(addressFromDB);
         }
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
-        public IActionResult AdicionaFilme([FromBody] Address address)
+        public IActionResult AddAddress([FromBody] Address address)
         {
             AddressDAL addressDAL = new AddressDAL();
-            addressDAL.Adicionar(address);
+            addressDAL.Add(address);
             return CreatedAtAction(nameof(GetAdressesByAddressNickName),
-                new { enderecoParaBuscar = address.AdressNickname },
-                address);
+                new { addressIDToLookFor = address.AddressID }, address);
         }
 
-        [HttpPut("{enderecoParaBuscar}")]
-        public IActionResult AtualizaFilme(string enderecoParaBuscar, [FromBody] Address address)
+        [HttpPut("{addressIDToLookFor}")]
+        public IActionResult UpdateAddress(long addressIDToLookFor, [FromBody] Address address)
         {
             AddressDAL addressDAL = new AddressDAL();
-            Address addressFromDB = addressDAL.Buscar(enderecoParaBuscar);
+            Address addressFromDB = addressDAL.RetrieveByID(addressIDToLookFor);
             if (addressFromDB == null) return NotFound();
 
-            addressDAL.Atualizar(address);
+            addressDAL.Update(address, addressIDToLookFor);
             return NoContent();
         }
 
-        [HttpDelete("{enderecoParaBuscar}")]
-        public IActionResult DeletaFilme(string enderecoParaBuscar)
+        [HttpDelete("{addressIDToLookFor}")]
+        public IActionResult DeletaFilme(long addressIDToLookFor)
         {
             AddressDAL addressDAL = new AddressDAL();
-            Address addressFromDB = addressDAL.Buscar(enderecoParaBuscar);
+            Address addressFromDB = addressDAL.RetrieveByID(addressIDToLookFor);
             if (addressFromDB == null) return NotFound();
 
-            addressDAL.Excluir(addressFromDB);
+            addressDAL.Delete(addressFromDB);
             return NoContent();
         }
     }

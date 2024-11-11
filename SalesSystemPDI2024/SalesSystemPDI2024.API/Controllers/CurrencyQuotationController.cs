@@ -8,60 +8,60 @@ namespace SalesSystemPDI2024.API.Controllers
     [Route("[controller]")]
     public class CurrencyQuotationController : Controller
     {
-        private readonly ILogger<AddressController> _logger;
+        private readonly ILogger<CurrencyQuotationController> _logger;
 
-        public CurrencyQuotationController(ILogger<AddressController> logger)
+        public CurrencyQuotationController(ILogger<CurrencyQuotationController> logger)
         {
             _logger = logger;
         }
 
         [HttpGet]
-        public IActionResult GetAdresses()
+        public IActionResult Get()
         {
-            AddressDAL addressDAL = new AddressDAL();
-            return Ok(addressDAL.List());
+            CurrencyQuotationDAL objectDAL = new CurrencyQuotationDAL();
+            return Ok(objectDAL.List());
         }
 
-        [HttpGet("{addressIDToLookFor}")]
-        public IActionResult GetAdressesByAddressNickName(long addressIDToLookFor)
+        [HttpGet("{IDToLookFor}")]
+        public IActionResult GetByID(long IDToLookFor)
         {
-            AddressDAL addressDAL = new AddressDAL();
-            Address addressFromDB = addressDAL.RetrieveByID(addressIDToLookFor);
+            CurrencyQuotationDAL objectDAL = new CurrencyQuotationDAL();
+            CurrencyQuotation objectModel = objectDAL.RetrieveByID(IDToLookFor);
 
-            if (addressFromDB == null) return NotFound();
+            if (objectModel == null) return NotFound();
 
-            return Ok(addressFromDB);
+            return Ok(objectModel);
         }
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
-        public IActionResult AddAddress([FromBody] Address address)
+        public IActionResult Add([FromBody] CurrencyQuotation messageBody)
         {
-            AddressDAL addressDAL = new AddressDAL();
-            addressDAL.Add(address);
-            return CreatedAtAction(nameof(GetAdressesByAddressNickName),
-                new { addressIDToLookFor = address.AddressID }, address);
+            CurrencyQuotationDAL objectDAL = new CurrencyQuotationDAL();
+            objectDAL.Add(messageBody);
+            return CreatedAtAction(nameof(GetByID),
+                new { IDToLookFor = messageBody.CurrencyQuotationID }, messageBody);
         }
 
-        [HttpPut("{addressIDToLookFor}")]
-        public IActionResult UpdateAddress(long addressIDToLookFor, [FromBody] Address address)
+        [HttpPut("{IDToLookFor}")]
+        public IActionResult Update(long IDToLookFor, [FromBody] CurrencyQuotation messageBody)
         {
-            AddressDAL addressDAL = new AddressDAL();
-            Address addressFromDB = addressDAL.RetrieveByID(addressIDToLookFor);
-            if (addressFromDB == null) return NotFound();
+            CurrencyQuotationDAL objectDAL = new CurrencyQuotationDAL();
+            CurrencyQuotation objectModel = objectDAL.RetrieveByID(IDToLookFor);
+            if (objectModel == null) return NotFound();
 
-            addressDAL.Update(address, addressIDToLookFor);
+            objectDAL.Update(messageBody, IDToLookFor);
             return NoContent();
         }
 
-        [HttpDelete("{addressIDToLookFor}")]
-        public IActionResult DeletaFilme(long addressIDToLookFor)
+        [HttpDelete("{IDToLookFor}")]
+        public IActionResult Delete(long IDToLookFor)
         {
-            AddressDAL addressDAL = new AddressDAL();
-            Address addressFromDB = addressDAL.RetrieveByID(addressIDToLookFor);
-            if (addressFromDB == null) return NotFound();
+            CurrencyQuotationDAL objectDAL = new CurrencyQuotationDAL();
+            CurrencyQuotation objectModel = objectDAL.RetrieveByID(IDToLookFor);
+            if (objectModel == null) return NotFound();
 
-            addressDAL.Delete(addressFromDB);
+            objectDAL.Delete(objectModel);
             return NoContent();
         }
     }

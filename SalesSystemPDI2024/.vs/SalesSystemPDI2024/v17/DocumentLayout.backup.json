@@ -5,6 +5,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{1627B877-1E47-4EC6-A35C-A92C521C7D39}|SalesSystemPDI2024.Data\\SalesSystemPDI2024.Data.csproj|c:\\users\\felip\\desktop\\alura\\_novos_cursos\\pdi-2024\\back-end\\pdi_2024_back-end\\salessystempdi2024\\salessystempdi2024.data\\connection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1627B877-1E47-4EC6-A35C-A92C521C7D39}|SalesSystemPDI2024.Data\\SalesSystemPDI2024.Data.csproj|solutionrelative:salessystempdi2024.data\\connection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1627B877-1E47-4EC6-A35C-A92C521C7D39}|SalesSystemPDI2024.Data\\SalesSystemPDI2024.Data.csproj|c:\\users\\felip\\desktop\\alura\\_novos_cursos\\pdi-2024\\back-end\\pdi_2024_back-end\\salessystempdi2024\\salessystempdi2024.data\\dal\\productlistitemstatuschangedal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1627B877-1E47-4EC6-A35C-A92C521C7D39}|SalesSystemPDI2024.Data\\SalesSystemPDI2024.Data.csproj|solutionrelative:salessystempdi2024.data\\dal\\productlistitemstatuschangedal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1627B877-1E47-4EC6-A35C-A92C521C7D39}|SalesSystemPDI2024.Data\\SalesSystemPDI2024.Data.csproj|c:\\users\\felip\\desktop\\alura\\_novos_cursos\\pdi-2024\\back-end\\pdi_2024_back-end\\salessystempdi2024\\salessystempdi2024.data\\dal\\productdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1627B877-1E47-4EC6-A35C-A92C521C7D39}|SalesSystemPDI2024.Data\\SalesSystemPDI2024.Data.csproj|solutionrelative:salessystempdi2024.data\\dal\\productdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D354C91-EFC3-4D9C-986E-AA238326D5C2}|SalesSystemPDI2024.API\\SalesSystemPDI2024.API.csproj|c:\\users\\felip\\desktop\\alura\\_novos_cursos\\pdi-2024\\back-end\\pdi_2024_back-end\\salessystempdi2024\\salessystempdi2024.api\\controllers\\addresstypecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D354C91-EFC3-4D9C-986E-AA238326D5C2}|SalesSystemPDI2024.API\\SalesSystemPDI2024.API.csproj|solutionrelative:salessystempdi2024.api\\controllers\\addresstypecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +26,47 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProductListItemStatusChangeDAL.cs",
+              "DocumentMoniker": "C:\\Users\\felip\\Desktop\\ALURA\\_NOVOS_CURSOS\\PDI-2024\\back-end\\PDI_2024_Back-end\\SalesSystemPDI2024\\SalesSystemPDI2024.Data\\DAL\\ProductListItemStatusChangeDAL.cs",
+              "RelativeDocumentMoniker": "SalesSystemPDI2024.Data\\DAL\\ProductListItemStatusChangeDAL.cs",
+              "ToolTip": "C:\\Users\\felip\\Desktop\\ALURA\\_NOVOS_CURSOS\\PDI-2024\\back-end\\PDI_2024_Back-end\\SalesSystemPDI2024\\SalesSystemPDI2024.Data\\DAL\\ProductListItemStatusChangeDAL.cs",
+              "RelativeToolTip": "SalesSystemPDI2024.Data\\DAL\\ProductListItemStatusChangeDAL.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAswBIAAABjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T17:36:19.111Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProductDAL.cs",
+              "DocumentMoniker": "C:\\Users\\felip\\Desktop\\ALURA\\_NOVOS_CURSOS\\PDI-2024\\back-end\\PDI_2024_Back-end\\SalesSystemPDI2024\\SalesSystemPDI2024.Data\\DAL\\ProductDAL.cs",
+              "RelativeDocumentMoniker": "SalesSystemPDI2024.Data\\DAL\\ProductDAL.cs",
+              "ToolTip": "C:\\Users\\felip\\Desktop\\ALURA\\_NOVOS_CURSOS\\PDI-2024\\back-end\\PDI_2024_Back-end\\SalesSystemPDI2024\\SalesSystemPDI2024.Data\\DAL\\ProductDAL.cs",
+              "RelativeToolTip": "SalesSystemPDI2024.Data\\DAL\\ProductDAL.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAAFIAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T17:33:07.423Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AddressTypeController.cs",
+              "DocumentMoniker": "C:\\Users\\felip\\Desktop\\ALURA\\_NOVOS_CURSOS\\PDI-2024\\back-end\\PDI_2024_Back-end\\SalesSystemPDI2024\\SalesSystemPDI2024.API\\Controllers\\AddressTypeController.cs",
+              "RelativeDocumentMoniker": "SalesSystemPDI2024.API\\Controllers\\AddressTypeController.cs",
+              "ToolTip": "C:\\Users\\felip\\Desktop\\ALURA\\_NOVOS_CURSOS\\PDI-2024\\back-end\\PDI_2024_Back-end\\SalesSystemPDI2024\\SalesSystemPDI2024.API\\Controllers\\AddressTypeController.cs",
+              "RelativeToolTip": "SalesSystemPDI2024.API\\Controllers\\AddressTypeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T17:27:04.473Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,7 +75,7 @@
               "RelativeDocumentMoniker": "SalesSystemPDI2024.Data\\Connection.cs",
               "ToolTip": "C:\\Users\\felip\\Desktop\\ALURA\\_NOVOS_CURSOS\\PDI-2024\\back-end\\PDI_2024_Back-end\\SalesSystemPDI2024\\SalesSystemPDI2024.Data\\Connection.cs",
               "RelativeToolTip": "SalesSystemPDI2024.Data\\Connection.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-02T21:17:30.803Z",
               "EditorCaption": ""

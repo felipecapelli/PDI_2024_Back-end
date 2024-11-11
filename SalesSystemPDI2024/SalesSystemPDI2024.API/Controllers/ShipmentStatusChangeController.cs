@@ -8,60 +8,60 @@ namespace SalesSystemPDI2024.API.Controllers
     [Route("[controller]")]
     public class ShipmentStatusChangeController : Controller
     {
-        private readonly ILogger<AddressController> _logger;
+        private readonly ILogger<ShipmentStatusChangeController> _logger;
 
-        public ShipmentStatusChangeController(ILogger<AddressController> logger)
+        public ShipmentStatusChangeController(ILogger<ShipmentStatusChangeController> logger)
         {
             _logger = logger;
         }
 
         [HttpGet]
-        public IActionResult GetAdresses()
+        public IActionResult Get()
         {
-            AddressDAL addressDAL = new AddressDAL();
-            return Ok(addressDAL.List());
+            ShipmentStatusChangeDAL objectDAL = new ShipmentStatusChangeDAL();
+            return Ok(objectDAL.List());
         }
 
-        [HttpGet("{addressIDToLookFor}")]
-        public IActionResult GetAdressesByAddressNickName(long addressIDToLookFor)
+        [HttpGet("{ShipmentIDToLookFor, StatusIDToLookFor}")]
+        public IActionResult GetByID(long ShipmentIDToLookFor, long StatusIDToLookFor)
         {
-            AddressDAL addressDAL = new AddressDAL();
-            Address addressFromDB = addressDAL.RetrieveByID(addressIDToLookFor);
+            ShipmentStatusChangeDAL objectDAL = new ShipmentStatusChangeDAL();
+            ShipmentStatusChange objectModel = objectDAL.RetrieveByID(ShipmentIDToLookFor, StatusIDToLookFor);
 
-            if (addressFromDB == null) return NotFound();
+            if (objectModel == null) return NotFound();
 
-            return Ok(addressFromDB);
+            return Ok(objectModel);
         }
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
-        public IActionResult AddAddress([FromBody] Address address)
+        public IActionResult Add([FromBody] ShipmentStatusChange messageBody)
         {
-            AddressDAL addressDAL = new AddressDAL();
-            addressDAL.Add(address);
-            return CreatedAtAction(nameof(GetAdressesByAddressNickName),
-                new { addressIDToLookFor = address.AddressID }, address);
+            ShipmentStatusChangeDAL objectDAL = new ShipmentStatusChangeDAL();
+            objectDAL.Add(messageBody);
+            return CreatedAtAction(nameof(GetByID),
+                new { IDToLookFor = messageBody.ShipmentID }, messageBody);
         }
 
-        [HttpPut("{addressIDToLookFor}")]
-        public IActionResult UpdateAddress(long addressIDToLookFor, [FromBody] Address address)
+        [HttpPut("{ShipmentIDToLookFor, StatusIDToLookFor}")]
+        public IActionResult Update(long ShipmentIDToLookFor, long StatusIDToLookFor, [FromBody] ShipmentStatusChange messageBody)
         {
-            AddressDAL addressDAL = new AddressDAL();
-            Address addressFromDB = addressDAL.RetrieveByID(addressIDToLookFor);
-            if (addressFromDB == null) return NotFound();
+            ShipmentStatusChangeDAL objectDAL = new ShipmentStatusChangeDAL();
+            ShipmentStatusChange objectModel = objectDAL.RetrieveByID(ShipmentIDToLookFor, StatusIDToLookFor);
+            if (objectModel == null) return NotFound();
 
-            addressDAL.Update(address, addressIDToLookFor);
+            objectDAL.Update(messageBody, ShipmentIDToLookFor, StatusIDToLookFor);
             return NoContent();
         }
 
-        [HttpDelete("{addressIDToLookFor}")]
-        public IActionResult DeletaFilme(long addressIDToLookFor)
+        [HttpDelete("{ShipmentIDToLookFor, StatusIDToLookFor}")]
+        public IActionResult Delete(long ShipmentIDToLookFor, long StatusIDToLookFor)
         {
-            AddressDAL addressDAL = new AddressDAL();
-            Address addressFromDB = addressDAL.RetrieveByID(addressIDToLookFor);
-            if (addressFromDB == null) return NotFound();
+            ShipmentStatusChangeDAL objectDAL = new ShipmentStatusChangeDAL();
+            ShipmentStatusChange objectModel = objectDAL.RetrieveByID(ShipmentIDToLookFor, StatusIDToLookFor);
+            if (objectModel == null) return NotFound();
 
-            addressDAL.Delete(addressFromDB);
+            objectDAL.Delete(objectModel);
             return NoContent();
         }
     }

@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿
+
+using Microsoft.AspNetCore.Mvc;
 using SalesSystemPDI2024.Data.DAL;
 using SalesSystemPDI2024.Model;
 
@@ -8,60 +10,60 @@ namespace SalesSystemPDI2024.API.Controllers
     [Route("[controller]")]
     public class AddressTypeController : Controller
     {
-        private readonly ILogger<AddressController> _logger;
+        private readonly ILogger<AddressTypeController> _logger;
 
-        public AddressTypeController(ILogger<AddressController> logger)
+        public AddressTypeController(ILogger<AddressTypeController> logger)
         {
             _logger = logger;
         }
 
         [HttpGet]
-        public IActionResult GetAdresses()
+        public IActionResult Get()
         {
-            AddressDAL addressDAL = new AddressDAL();
-            return Ok(addressDAL.List());
+            AddressTypeDAL objectDAL = new AddressTypeDAL();
+            return Ok(objectDAL.List());
         }
 
-        [HttpGet("{addressIDToLookFor}")]
-        public IActionResult GetAdressesByAddressNickName(long addressIDToLookFor)
+        [HttpGet("{IDToLookFor}")]
+        public IActionResult GetByID(long IDToLookFor)
         {
-            AddressDAL addressDAL = new AddressDAL();
-            Address addressFromDB = addressDAL.RetrieveByID(addressIDToLookFor);
+            AddressTypeDAL objectDAL = new AddressTypeDAL();
+            AddressType objectModel = objectDAL.RetrieveByID(IDToLookFor);
 
-            if (addressFromDB == null) return NotFound();
+            if (objectModel == null) return NotFound();
 
-            return Ok(addressFromDB);
+            return Ok(objectModel);
         }
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
-        public IActionResult AddAddress([FromBody] Address address)
+        public IActionResult Add([FromBody] AddressType messageBody)
         {
-            AddressDAL addressDAL = new AddressDAL();
-            addressDAL.Add(address);
-            return CreatedAtAction(nameof(GetAdressesByAddressNickName),
-                new { addressIDToLookFor = address.AddressID }, address);
+            AddressTypeDAL objectDAL = new AddressTypeDAL();
+            objectDAL.Add(messageBody);
+            return CreatedAtAction(nameof(GetByID),
+                new { IDToLookFor = messageBody.AddressTypeID }, messageBody);
         }
 
-        [HttpPut("{addressIDToLookFor}")]
-        public IActionResult UpdateAddress(long addressIDToLookFor, [FromBody] Address address)
+        [HttpPut("{IDToLookFor}")]
+        public IActionResult Update(long IDToLookFor, [FromBody] AddressType messageBody)
         {
-            AddressDAL addressDAL = new AddressDAL();
-            Address addressFromDB = addressDAL.RetrieveByID(addressIDToLookFor);
-            if (addressFromDB == null) return NotFound();
+            AddressTypeDAL objectDAL = new AddressTypeDAL();
+            AddressType objectModel = objectDAL.RetrieveByID(IDToLookFor);
+            if (objectModel == null) return NotFound();
 
-            addressDAL.Update(address, addressIDToLookFor);
+            objectDAL.Update(messageBody, IDToLookFor);
             return NoContent();
         }
 
-        [HttpDelete("{addressIDToLookFor}")]
-        public IActionResult DeletaFilme(long addressIDToLookFor)
+        [HttpDelete("{IDToLookFor}")]
+        public IActionResult Delete(long IDToLookFor)
         {
-            AddressDAL addressDAL = new AddressDAL();
-            Address addressFromDB = addressDAL.RetrieveByID(addressIDToLookFor);
-            if (addressFromDB == null) return NotFound();
+            AddressTypeDAL objectDAL = new AddressTypeDAL();
+            AddressType objectModel = objectDAL.RetrieveByID(IDToLookFor);
+            if (objectModel == null) return NotFound();
 
-            addressDAL.Delete(addressFromDB);
+            objectDAL.Delete(objectModel);
             return NoContent();
         }
     }

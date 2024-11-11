@@ -8,60 +8,60 @@ namespace SalesSystemPDI2024.API.Controllers
     [Route("[controller]")]
     public class OrderStatusChangeController : Controller
     {
-        private readonly ILogger<AddressController> _logger;
+        private readonly ILogger<OrderStatusChangeController> _logger;
 
-        public OrderStatusChangeController(ILogger<AddressController> logger)
+        public OrderStatusChangeController(ILogger<OrderStatusChangeController> logger)
         {
             _logger = logger;
         }
 
         [HttpGet]
-        public IActionResult GetAdresses()
+        public IActionResult Get()
         {
-            AddressDAL addressDAL = new AddressDAL();
-            return Ok(addressDAL.List());
+            OrderStatusChangeDAL objectDAL = new OrderStatusChangeDAL();
+            return Ok(objectDAL.List());
         }
 
-        [HttpGet("{addressIDToLookFor}")]
-        public IActionResult GetAdressesByAddressNickName(long addressIDToLookFor)
+        [HttpGet("{OrderIDToLookFor, StatusIDToLookFor}")]
+        public IActionResult GetByID(long OrderIDToLookFor, long StatusIDToLookFor)
         {
-            AddressDAL addressDAL = new AddressDAL();
-            Address addressFromDB = addressDAL.RetrieveByID(addressIDToLookFor);
+            OrderStatusChangeDAL objectDAL = new OrderStatusChangeDAL();
+            OrderStatusChange objectModel = objectDAL.RetrieveByID(OrderIDToLookFor, StatusIDToLookFor);
 
-            if (addressFromDB == null) return NotFound();
+            if (objectModel == null) return NotFound();
 
-            return Ok(addressFromDB);
+            return Ok(objectModel);
         }
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
-        public IActionResult AddAddress([FromBody] Address address)
+        public IActionResult Add([FromBody] OrderStatusChange messageBody)
         {
-            AddressDAL addressDAL = new AddressDAL();
-            addressDAL.Add(address);
-            return CreatedAtAction(nameof(GetAdressesByAddressNickName),
-                new { addressIDToLookFor = address.AddressID }, address);
+            OrderStatusChangeDAL objectDAL = new OrderStatusChangeDAL();
+            objectDAL.Add(messageBody);
+            return CreatedAtAction(nameof(GetByID),
+                new { IDToLookFor = messageBody.StatusID }, messageBody);
         }
 
-        [HttpPut("{addressIDToLookFor}")]
-        public IActionResult UpdateAddress(long addressIDToLookFor, [FromBody] Address address)
+        [HttpPut("{IDToLOrderIDToLookFor, StatusIDToLookForookFor}")]
+        public IActionResult Update(long OrderIDToLookFor, long StatusIDToLookFor, [FromBody] OrderStatusChange messageBody)
         {
-            AddressDAL addressDAL = new AddressDAL();
-            Address addressFromDB = addressDAL.RetrieveByID(addressIDToLookFor);
-            if (addressFromDB == null) return NotFound();
+            OrderStatusChangeDAL objectDAL = new OrderStatusChangeDAL();
+            OrderStatusChange objectModel = objectDAL.RetrieveByID(OrderIDToLookFor, StatusIDToLookFor);
+            if (objectModel == null) return NotFound();
 
-            addressDAL.Update(address, addressIDToLookFor);
+            objectDAL.Update(messageBody, OrderIDToLookFor, StatusIDToLookFor);
             return NoContent();
         }
 
-        [HttpDelete("{addressIDToLookFor}")]
-        public IActionResult DeletaFilme(long addressIDToLookFor)
+        [HttpDelete("{IDTOrderIDToLookFor, StatusIDToLookForoLookFor}")]
+        public IActionResult Delete(long OrderIDToLookFor, long StatusIDToLookFor)
         {
-            AddressDAL addressDAL = new AddressDAL();
-            Address addressFromDB = addressDAL.RetrieveByID(addressIDToLookFor);
-            if (addressFromDB == null) return NotFound();
+            OrderStatusChangeDAL objectDAL = new OrderStatusChangeDAL();
+            OrderStatusChange objectModel = objectDAL.RetrieveByID(OrderIDToLookFor, StatusIDToLookFor);
+            if (objectModel == null) return NotFound();
 
-            addressDAL.Delete(addressFromDB);
+            objectDAL.Delete(objectModel);
             return NoContent();
         }
     }

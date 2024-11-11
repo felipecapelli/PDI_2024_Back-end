@@ -26,8 +26,8 @@ namespace SalesSystemPDI2024.Data.DAL
                 long productID = Convert.ToInt64(dataReader["ProductID"]);
                 string productName = Convert.ToString(dataReader["ProductName"]);
                 long baseUnitOfMeasurementID = Convert.ToInt64(dataReader["BaseUnitOfMeasurementID"]);
-                long baseCurrencyID = Convert.ToInt64(dataReader["Street"]);
-                decimal price = Convert.ToDecimal(dataReader["Number"]);
+                long baseCurrencyID = Convert.ToInt64(dataReader["BaseCurrencyID"]);
+                decimal price = Convert.ToDecimal(dataReader["Price"]);
 
                 Product product = new()
                 {
@@ -79,8 +79,8 @@ namespace SalesSystemPDI2024.Data.DAL
             long productID = Convert.ToInt64(dataReader["ProductID"]);
             string productName = Convert.ToString(dataReader["ProductName"]);
             long baseUnitOfMeasurementID = Convert.ToInt64(dataReader["BaseUnitOfMeasurementID"]);
-            long baseCurrencyID = Convert.ToInt64(dataReader["Street"]);
-            decimal price = Convert.ToDecimal(dataReader["Number"]);
+            long baseCurrencyID = Convert.ToInt64(dataReader["BaseCurrencyID"]);
+            decimal price = Convert.ToDecimal(dataReader["Price"]);
 
             Product product = new()
             {

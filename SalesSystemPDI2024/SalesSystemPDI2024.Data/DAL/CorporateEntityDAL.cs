@@ -10,13 +10,28 @@ namespace SalesSystemPDI2024.Data.DAL
 {
     public class CorporateEntityDAL
     {
+        public long GetLastID()
+        {
+            using var connection = new Connection().ObterConexao();
+            connection.Open();
+
+            string sql = "SELECT IDENT_CURRENT('[SalesSystemPDI2024].[dbo].[CorporateEntities]') AS ID";
+            SqlCommand command = new SqlCommand(sql, connection);
+            using SqlDataReader dataReader = command.ExecuteReader();
+
+            dataReader.Read();
+            long ID = Convert.ToInt64(dataReader["ID"]);
+
+            return ID;
+        }
+
         public IEnumerable<CorporateEntity> List()
         {
             var lista = new List<CorporateEntity>();
             using var connection = new Connection().ObterConexao();
             connection.Open();
 
-            string sql = "SELECT * FROM [SalesSystemPDI2024].[dbo].[CorporateEntities]";
+            string sql = "SELECT * FROM [SalesSystemPDI2024].[dbo].[CorporateEntities] ORDER BY CustomersSuppliersID DESC";
             SqlCommand command = new SqlCommand(sql, connection);
             using SqlDataReader dataReader = command.ExecuteReader();
 

@@ -11,13 +11,28 @@ namespace SalesSystemPDI2024.Data.DAL
 {
     public class CustomersSupplierDAL
     {
+        public long GetLastID()
+        {
+            using var connection = new Connection().ObterConexao();
+            connection.Open();
+
+            string sql = "SELECT IDENT_CURRENT('[SalesSystemPDI2024].[dbo].[CustomersSuppliers]') AS ID";
+            SqlCommand command = new SqlCommand(sql, connection);
+            using SqlDataReader dataReader = command.ExecuteReader();
+
+            dataReader.Read();
+            long ID = Convert.ToInt64(dataReader["ID"]);
+
+            return ID;
+        }
+
         public IEnumerable<CustomersSupplier> List()
         {
             var lista = new List<CustomersSupplier>();
             using var connection = new Connection().ObterConexao();
             connection.Open();
 
-            string sql = "SELECT * FROM [SalesSystemPDI2024].[dbo].[CustomersSuppliers]";
+            string sql = "SELECT * FROM [SalesSystemPDI2024].[dbo].[CustomersSuppliers] ORDER BY CustomersSuppliersID DESC";
             SqlCommand command = new SqlCommand(sql, connection);
             using SqlDataReader dataReader = command.ExecuteReader();
 

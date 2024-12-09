@@ -10,13 +10,28 @@ namespace SalesSystemPDI2024.Data.DAL
 {
     public class ProductListItemStatusChangeDAL
     {
+        public long GetLastID()
+        {
+            using var connection = new Connection().ObterConexao();
+            connection.Open();
+
+            string sql = "SELECT IDENT_CURRENT('[SalesSystemPDI2024].[dbo].[ProductsListItemStatusesChanges]') AS ID";
+            SqlCommand command = new SqlCommand(sql, connection);
+            using SqlDataReader dataReader = command.ExecuteReader();
+
+            dataReader.Read();
+            long ID = Convert.ToInt64(dataReader["ID"]);
+
+            return ID;
+        }
+
         public IEnumerable<ProductListItemStatusChange> List()
         {
             var lista = new List<ProductListItemStatusChange>();
             using var connection = new Connection().ObterConexao();
             connection.Open();
 
-            string sql = "SELECT * FROM [SalesSystemPDI2024].[dbo].[ProductsListItemStatusesChanges]";
+            string sql = "SELECT * FROM [SalesSystemPDI2024].[dbo].[ProductsListItemStatusesChanges] ORDER BY ProductListID DESC";
             SqlCommand command = new SqlCommand(sql, connection);
             using SqlDataReader dataReader = command.ExecuteReader();
 

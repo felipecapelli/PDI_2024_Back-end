@@ -10,13 +10,28 @@ namespace SalesSystemPDI2024.Data.DAL
 {
     public class AddressDAL
     {
+        public long GetLastID()
+        {
+            using var connection = new Connection().ObterConexao();
+            connection.Open();
+
+            string sql = "SELECT IDENT_CURRENT('[SalesSystemPDI2024].[dbo].[Addresses]') AS ID";
+            SqlCommand command = new SqlCommand(sql, connection);
+            using SqlDataReader dataReader = command.ExecuteReader();
+
+            dataReader.Read();
+            long ID = Convert.ToInt64(dataReader["ID"]);
+
+            return ID;
+        }
+
         public IEnumerable<Address> List()
         {
             var lista = new List<Address>();
             using var connection = new Connection().ObterConexao();
             connection.Open();
 
-            string sql = "SELECT * FROM [SalesSystemPDI2024].[dbo].[Addresses]";
+            string sql = "SELECT * FROM [SalesSystemPDI2024].[dbo].[Addresses] ORDER BY AddressID DESC";
             SqlCommand command = new SqlCommand(sql, connection);
             using SqlDataReader dataReader = command.ExecuteReader();
 

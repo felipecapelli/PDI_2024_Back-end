@@ -39,6 +39,10 @@ namespace SalesSystemPDI2024.API.Controllers
         {
             BaseCurrencyDAL objectDAL = new BaseCurrencyDAL();
             objectDAL.Add(messageBody);
+
+            long LastIDAdded = objectDAL.GetLastID();
+            messageBody.BaseCurrencyID = LastIDAdded;
+
             return CreatedAtAction(nameof(GetByID),
                 new { IDToLookFor = messageBody.BaseCurrencyID }, messageBody);
         }

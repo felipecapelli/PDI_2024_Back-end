@@ -39,6 +39,10 @@ namespace SalesSystemPDI2024.API.Controllers
         {
             CorporateEntityDAL objectDAL = new CorporateEntityDAL();
             objectDAL.Add(messageBody);
+
+            long LastIDAdded = objectDAL.GetLastID();
+            messageBody.CustomersSuppliersID = LastIDAdded;
+
             return CreatedAtAction(nameof(GetByID),
                 new { IDToLookFor = messageBody.CustomersSuppliersID }, messageBody);
         }

@@ -39,6 +39,10 @@ namespace SalesSystemPDI2024.API.Controllers
         {
             InventoryDAL objectDAL = new InventoryDAL();
             objectDAL.Add(messageBody);
+
+            long LastIDAdded = objectDAL.GetLastID();
+            messageBody.InventoryID = LastIDAdded;
+
             return CreatedAtAction(nameof(GetByID),
                 new { IDToLookFor = messageBody.InventoryID }, messageBody);
         }

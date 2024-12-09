@@ -39,6 +39,10 @@ namespace SalesSystemPDI2024.API.Controllers
         {
             VariableUnitOfMeasurementDAL objectDAL = new VariableUnitOfMeasurementDAL();
             objectDAL.Add(messageBody);
+
+            long LastIDAdded = objectDAL.GetLastID();
+            messageBody.VariableUnitOfMeasurementID = LastIDAdded;
+
             return CreatedAtAction(nameof(GetByID),
                 new { IDToLookFor = messageBody.VariableUnitOfMeasurementID }, messageBody);
         }

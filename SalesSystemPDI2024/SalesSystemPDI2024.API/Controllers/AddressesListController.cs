@@ -39,6 +39,10 @@ namespace SalesSystemPDI2024.API.Controllers
         {
             AddressesListDAL objectDAL = new AddressesListDAL();
             objectDAL.Add(messageBody);
+
+            long LastIDAdded = objectDAL.GetLastID();
+            messageBody.AddressesListID = LastIDAdded;
+
             return CreatedAtAction(nameof(GetByID),
                 new { IDToLookFor = messageBody.AddressesListID }, messageBody);
         }
